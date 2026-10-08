@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#08090d" />
+  <title>ClipForge AI</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <div class="bg-glow glow-a"></div>
+  <div class="bg-glow glow-b"></div>
+
+  <header class="nav">
+    <div class="brand"><span class="brand-mark">✦</span> ClipForge <span class="ai">AI</span></div>
+    <div class="nav-pill">YouTube → Shorts</div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="eyebrow"><span class="pulse"></span> AI SHORT-FORM EDITOR</div>
+      <h1>Turn long videos into<br><span>scroll-stopping clips.</span></h1>
+      <p class="sub">Paste a YouTube URL. ClipForge finds the strongest moments and renders them as vertical shorts.</p>
+
+      <form id="clipForm" class="card">
+        <label class="url-label" for="url">YouTube URL</label>
+        <div class="url-row">
+          <input id="url" type="url" required placeholder="https://youtube.com/watch?v=..." autocomplete="off" />
+          <button id="generate" type="submit"><span>Generate clips</span><span class="arrow">↗</span></button>
+        </div>
+
+        <div class="settings">
+          <div class="setting">
+            <label for="count">Clips</label>
+            <select id="count">
+              <option value="3">3 clips</option>
+              <option value="5">5 clips</option>
+              <option value="8">8 clips</option>
+              <option value="10">10 clips</option>
+            </select>
+          </div>
+          <div class="setting">
+            <label for="length">Max length</label>
+            <select id="length">
+              <option value="30">30 sec</option>
+              <option value="45" selected>45 sec</option>
+              <option value="60">60 sec</option>
+            </select>
+          </div>
+          <div class="setting auto">
+            <span class="check">✓</span>
+            <span>AI selects highlights</span>
+          </div>
+        </div>
+        <p class="legal">Only process videos you own or have permission to download and edit.</p>
+      </form>
+    </section>
+
+    <section id="progress" class="progress card hidden">
+      <div class="progress-top">
+        <div>
+          <div class="mini-label">PROCESSING</div>
+          <h2 id="status">Starting…</h2>
+        </div>
+        <strong id="percent">0%</strong>
+      </div>
+      <div class="bar"><div id="barFill"></div></div>
+    </section>
+
+    <section id="results" class="results hidden">
+      <div class="results-head">
+        <div>
+          <div class="mini-label">READY</div>
+          <h2>Your clips</h2>
+          <p id="videoTitle"></p>
+        </div>
+        <button id="newJob" class="ghost">＋ New video</button>
+      </div>
+      <div id="clipGrid" class="clip-grid"></div>
+    </section>
+
+    <section class="features">
+      <div><b>01</b><span>AI highlights</span><small>Finds the moments worth watching.</small></div>
+      <div><b>02</b><span>9:16 framing</span><small>Ready for Shorts, Reels & TikTok.</small></div>
+      <div><b>03</b><span>Fast rendering</span><small>FFmpeg-powered video processing.</small></div>
+    </section>
+  </main>
+
+  <footer>Built for creators. Please respect copyright and platform terms.</footer>
+  <script src="/app.js"></script>
+</body>
+</html>

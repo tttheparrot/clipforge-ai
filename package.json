@@ -1,0 +1,21 @@
+{
+  "name": "ai-clip-maker",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A modern YouTube-to-clips web app for videos you are authorized to process.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "dependencies": {
+    "express": "^4.21.2",
+    "ffmpeg-static": "^5.2.0",
+    "openai": "^4.77.0",
+    "yt-dlp-exec": "^2.4.2",
+    "dotenv": "^16.4.7"
+  }
+}
